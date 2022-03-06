@@ -5,7 +5,7 @@ class StudiosController < ApplicationController
   def index
     @studios = Studio.all
 
-    render json: @studios
+    render json: @studios.includes(:movies), only: [:name]
   end
 
   # GET /studios/1
